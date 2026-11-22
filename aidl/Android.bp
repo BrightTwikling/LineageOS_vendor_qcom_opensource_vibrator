@@ -4,6 +4,7 @@ Common_CFlags += ["-Werror"]
 cc_library_shared {
     name: "vendor.qti.hardware.vibrator.impl",
     vendor: true,
+    recovery_available: true,
     cflags: Common_CFlags + select(soong_config_variable("qti_vibrator", "use_libpalclient"), {
         true: ["-DUSE_LIBPALCLIENT"],
         default: [],
@@ -41,6 +42,28 @@ cc_binary {
     srcs: [
         "service.cpp",
     ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk",
+        "vendor.qti.hardware.vibrator.impl",
+    ],
+}
+
+cc_binary {
+    name: "vendor.qti.hardware.vibrator.service_recovery",
+    recovery: true,
+    relative_install_path: "hw",
+    init_rc: ["vendor.qti.hardware.vibrator.service.rc"],
+    vintf_fragments: [
+        "vendor.qti.hardware.vibrator.service.xml",
+    ],
+    srcs: [
+        "service.cpp",
+    ],
+
     shared_libs: [
         "libcutils",
         "libutils",

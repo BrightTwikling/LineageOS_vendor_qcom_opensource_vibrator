@@ -40,6 +40,8 @@
 #include <sys/epoll.h>
 #include <sys/poll.h>
 #include <thread>
+#include <fcntl.h>
+#include <unistd.h>
 
 #include "Vibrator.h"
 #ifdef USE_EFFECT_STREAM
