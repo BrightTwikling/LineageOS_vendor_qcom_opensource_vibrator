@@ -10,6 +10,7 @@ cc_library_headers {
 cc_library_shared {
     name: "libqtivibratoreffect",
     vendor: true,
+    recovery_available: true,
     cflags: Common_CFlags,
     srcs: [
         "effect.cpp",
@@ -23,6 +24,7 @@ cc_library_shared {
 cc_library_shared {
     name: "libqtivibratoreffectoffload",
     vendor: true,
+    recovery_available: true,
     cflags: Common_CFlags,
     srcs: [
         "VibratorPatterns.cpp"

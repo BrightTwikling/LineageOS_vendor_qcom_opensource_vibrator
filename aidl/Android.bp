@@ -56,7 +56,7 @@ cc_binary {
     name: "vendor.qti.hardware.vibrator.service_recovery",
     recovery: true,
     relative_install_path: "hw",
-    init_rc: ["vendor.qti.hardware.vibrator.service.rc"],
+    init_rc: ["vendor.qti.hardware.vibrator.service_recovery.rc"],
     vintf_fragments: [
         "vendor.qti.hardware.vibrator.service.xml",
     ],

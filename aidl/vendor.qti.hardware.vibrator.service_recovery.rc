@@ -1,0 +1,4 @@
+service vendor.qti.vibrator.recovery /system/bin/hw/vendor.qti.hardware.vibrator.service_recovery
+    class hal
+    user system
+    group system input
